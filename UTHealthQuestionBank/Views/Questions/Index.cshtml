@@ -1,0 +1,34 @@
+﻿@using Application.Common.Models
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<QuestionDto>
+@{
+}
+
+<h2>Questions</h2>
+<hr />
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Problem Statement</th>
+                <th>Correct Choice</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var question in Model)
+            {
+               <tr>
+                   <td>@question.ProblemStatement</td>
+                   <td>@question.CorrectChoice</td>
+                   <td><a class="btn btn-danger" asp-action="Delete" />Delete</td>
+               </tr> 
+            }
+        </tbody>
+    </table>
+    <hr/>
+    <a class="btn btn-primary" asp-action="Create">Create Question</a>
+</div>

@@ -1,0 +1,25 @@
+﻿@using Application.Questions.Commands
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CreateQuestionCommand
+
+<h2>Create Question</h2>
+<div class="container">
+    <form method="post" asp-action="Create">
+        <label asp-for="QuestionType"></label>
+        <select asp-for="QuestionType">
+            <option value="MultipleChoice">Multiple Choice</option>
+            <option value="TrueFalse">True / False</option>
+        </select>
+        <label asp-for="ProblemStatement"></label>
+        <input asp-for="ProblemStatement" />
+        
+        <label asp-for="CorrectChoice"></label>
+        <input asp-for="CorrectChoice" />
+           
+        <button type="submit">Submit</button>
+    </form>
+</div>
